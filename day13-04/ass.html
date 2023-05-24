@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Product List</title>
+    <style>
+      /* Style the product list */
+      .product-list {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .product {
+        width: 200px;
+        margin: 10px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 0 0 5px #ccc;
+      }
+      .product img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+      .product h3 {
+        font-size: 1.2rem;
+        margin: 10px 0;
+      }
+      .product p {
+        font-size: 1rem;
+        margin: 10px 0;
+      }
+      .product button {
+        font-size: 1rem;
+        padding: 5px;
+        border: none;
+        background-color: #f90;
+        color: #fff;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      .product button:hover {
+        background-color: #fa0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="product-list"></div>
+    <script>
+      // Fetch data from the API
+      fetch("https://dummyjson.com/products")
+        .then((response) => response.json())
+        .then((data) => {
+          const products = data.products;
+          productContainer.className = "product-list";
+          document.body.appendChild(productContainer);
+
+          // Loop through the products and create HTML elements
+          products.forEach((product) => {
+            const productDiv = document.createElement("div");
+            productDiv.classList.add("product");
+
+            const image = document.createElement("img");
+            image.src = product.image;
+            productDiv.appendChild(image);
+
+            const title = document.createElement("h3");
+            title.textContent = product.title;
+            productDiv.appendChild(title);
+
+            const description = document.createElement("p");
+            description.textContent = product.description;
+            productDiv.appendChild(description);
+
+            const price = document.createElement("p");
+            price.textContent = `Price: $${product.price}`;
+            productDiv.appendChild(price);
+
+            const button = document.createElement("button");
+            button.textContent = "Add to Cart";
+            productDiv.appendChild(button);
+
+            productContainer.appendChild(productDiv);
+          });
+        })
+        .catch((error) => console.error(error));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .btn {
+        height: 40px;
+        width: 277px;
+        background-color: red;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+      #block {
+        width: 500px;
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 50px 108px 50px 325px;
+        padding: 50px;
+        flex-direction: column;
+      }
+      .heading {
+        color: white;
+        display: flex;
+        align-items: flex-start;
+      }
+      .div_1 {
+        display: flex;
+        flex-direction: column;
+        gap: 19px;
+      }
+      .title {
+        width: 274px;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      const idiv = document.createElement("div");
+      idiv.id = "block";
+      idiv.className = "center";
+      const title_div = document.createElement("div");
+      title_div.className = "title";
+      const h2 = document.createElement("h2");
+      h2.className = "heading";
+      h2.innerText = "Sign In";
+      const div1 = document.createElement("div");
+      div1.className = "div_1";
+      const label = document.createElement("label");
+      label.innerText = "Email or phone number";
+      const inputBox = document.createElement("input");
+      inputBox.type = "text";
+      inputBox.required = true;
+
+      inputBox.placeholder = "Enter your email or phone number";
+      const label2 = document.createElement("label");
+      label2.innerText = "Password";
+      const inputBox1 = document.createElement("input");
+      inputBox1.type = "password";
+      inputBox1.placeholder = "Enter your password";
+      const submit = document.createElement("button");
+      submit.className = "btn";
+      submit.type = "button";
+      submit.innerText = "Sign In";
+
+      document.body.appendChild(idiv);
+      idiv.appendChild(title_div);
+      title_div.appendChild(h2);
+      idiv.appendChild(div1);
+      div1.appendChild(label);
+      div1.appendChild(inputBox);
+      div1.appendChild(label2);
+      div1.appendChild(inputBox1);
+      div1.appendChild(submit);
+    </script>
+  </body>
+</html>

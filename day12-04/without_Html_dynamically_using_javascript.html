@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .btn {
+        height: 20px;
+        width: 80px;
+        background-color: red;
+      }
+      #block {
+        width: 500px;
+        background-color: black;
+        display: flex;
+        /* justify-items: center; */
+        justify-content: center;
+        align-items: center;
+        margin: 50px 108px 50px 325px;
+        padding: 50px;
+      }
+      .heading {
+        color: white;
+      }
+      .div_1 {
+        display: flex;
+        flex-direction: column;
+      }
+    </style>
+  </head>
+
+  <body></body>
+</html>
+<script>
+  const idiv = document.createElement("div");
+  idiv.id = "block";
+  idiv.className = "center";
+  const h2 = document.createElement("h2");
+  h2.className = "heading";
+  h2.innerText = "Sign In";
+  // const div1 = document.createElement("div");
+  // div1.className = "div_1";
+  const lable = document.createElement("lable");
+  lable.type = "text";
+  const inputBox = document.createElement("input");
+  inputBox.type = "text";
+  inputBox.placeholder = "Email or phone number";
+  const lable2 = document.createElement("lable");
+  lable2.type = "text";
+  const inputBox1 = document.createElement("input");
+  inputBox1.type = "text";
+  inputBox1.placeholder = "Password";
+  const submit = document.createElement("button");
+  submit.className = "btn";
+  submit.type = "button";
+  submit.innerText = "Sign In";
+
+  document.getElementsByTagName("body")[0].appendChild(idiv);
+  // document.getElementsByTagName("body");
+  // body.type = "body";
+  // body.appendChild(idiv);
+  idiv.appendChild(h2);
+  idiv.appendChild(lable);
+  lable.appendChild(inputBox);
+  idiv.appendChild(lable2);
+  lable2.appendChild(inputBox1);
+  idiv.appendChild(submit);
+</script>

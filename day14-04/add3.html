@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo:App</title>
+    <style>
+      .add-container {
+        display: flex;
+        gap: 12px;
+        padding: 12px;
+      }
+      ul {
+        list-style-type: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="add-container">
+      <input id="label" type="text" placeholder="Label" />
+      <input id="placeholder" type="text" placeholder="Placeholder" />
+
+      <button>
+        Type
+        <select class="dropdown" id="type-dropdown">
+          <option value="email">Email</option>
+          <option type="date" value="date">Date</option>
+          <option value="textbox">TextBox</option>
+          <option value="password">Password</option>
+        </select>
+      </button>
+
+      <button onclick="Add()">Add</button>
+    </div>
+    <section>
+      <h1>Add</h1>
+      <ul id="list"></ul>
+    </section>
+  </body>
+</html>
+
+<script>
+  const ListContainer = document.getElementById("list");
+  const newLabel = document.getElementById("label");
+  const newPlaceholder = document.getElementById("placeholder");
+  const typeDropdown = document.getElementById("type-dropdown");
+
+  function Add() {
+    const newLabelText = newLabel.value;
+    const newPlaceholderText = newPlaceholder.value;
+
+    const selectedOption = typeDropdown.value;
+
+    if (selectedOption === "email") {
+      newLabel.value = "Email";
+      newPlaceholder.value = "example@domain.com";
+    } else if (selectedOption === "date") {
+      newLabel.value = "Date";
+      newPlaceholder.value = "dd/mm/yyyy";
+    } else if (selectedOption === "textbox") {
+      newLabel.value = "Textbox";
+      newPlaceholder.value = "Enter text";
+    } else if (selectedOption === "password") {
+      newLabel.value = "Password";
+      newPlaceholder.value = "********";
+    }
+
+    const labelElement = document.createElement("li");
+    const placeholderElement = document.createElement("li");
+    labelElement.textContent = newLabelText;
+    placeholderElement.textContent = newPlaceholderText;
+
+    ListContainer.appendChild(labelElement);
+    ListContainer.appendChild(placeholderElement);
+
+    newLabel.value = "";
+    newPlaceholder.value = "";
+  }
+</script>

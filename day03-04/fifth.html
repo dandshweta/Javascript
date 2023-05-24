@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  function do_something() {
+    console.log(bar); // undefined
+    var bar = 111;
+    console.log(bar); // 111
+  }
+  do_something();
+
+  function do_something1() {
+    var bar;
+    console.log(bar); // undefined
+    bar = 111;
+    console.log(bar); // 111
+  }
+  do_something1();
+</script>

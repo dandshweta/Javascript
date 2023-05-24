@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  const users = [
+    {
+      id: 1,
+      name: "Aman",
+      city: "Pune",
+    },
+    {
+      id: 2,
+      name: "Rahul",
+      city: "Delhi",
+    },
+    {
+      id: 3,
+      name: "Abhinav",
+      city: "Dehradun",
+    },
+  ];
+
+  const orders = [
+    {
+      orderId: 101,
+      userId: 1,
+      productName: "iPhone 12 Pro",
+    },
+    {
+      orderId: 102,
+      userId: 1,
+      productName: "iPhone 13 Pro",
+    },
+    {
+      orderId: 103,
+      userId: 1,
+      productName: "iPhone 14 Pro",
+    },
+    {
+      orderId: 104,
+      userId: 2,
+      productName: "Samsung S23",
+    },
+  ];
+
+  const result = users.map((user) => {
+    return {
+      userId: user.id,
+      name: user.name,
+    };
+  });
+  for (let i = 0; i < orders.length; i++) {
+    if (userId === 1) {
+    }
+  }
+  console.log(result);
+</script>

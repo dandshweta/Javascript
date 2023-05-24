@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  function a() {
+    console.log("hello");
+  }
+  a();
+
+  const p = () => console.log("hellow");
+  p();
+
+  const n = (a, b) => {
+    let c = a + b;
+    console.log(c);
+  };
+  n(20, 12);
+
+  const m = (e, f) => e + f;
+  console.log(m(20, 50));
+
+  const greet = (name, location) => "i am " + name + " from " + location;
+  console.log(greet("shweta", "pune"));
+
+  const greet1 = () => ({ name: "shweta" });
+  console.log(greet1()); //display object
+</script>

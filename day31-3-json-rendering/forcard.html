@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #main-container {
+        display: flex;
+        gap: 194px;
+        border-color: brown;
+        background-color: aquamarine;
+        align-items: center;
+        justify-content: center;
+      }
+      .container-div {
+        background-color: rgb(219, 44, 169);
+        padding: 36px;
+      }
+      .img-tag {
+        height: 100px;
+        width: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="main-container"></div>
+  </body>
+</html>
+<script>
+  const ImageCardData = [
+    {
+      id: 1,
+      title: "orange img",
+      image: "orange.jpg",
+    },
+    {
+      id: 2,
+      title: "mango img",
+      image: "mango.jpg",
+    },
+  ];
+  for (let i = 0; i < ImageCardData.length; i++) {
+    const mainContainer = document.getElementById("main-container");
+
+    const containerDiv = document.createElement("div");
+    containerDiv.className = "container-div";
+
+    const imgTag = document.createElement("img");
+    imgTag.className = "img-tag";
+    imgTag.src = ImageCardData[i].image;
+    containerDiv.appendChild(imgTag);
+
+    const Id = document.createElement("p");
+    Id.className = "id";
+    Id.textContent = ImageCardData[i].id;
+    containerDiv.appendChild(Id);
+
+    const Title = document.createElement("p");
+    Title.className = "title";
+    Title.textContent = ImageCardData[i].title;
+    containerDiv.appendChild(Title);
+
+    mainContainer.appendChild(containerDiv); //add container div into main container
+  }
+</script>

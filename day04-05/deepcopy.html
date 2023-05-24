@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  const lodash = require("lodash");
+  var employee = {
+    eid: "E102",
+    ename: "Jack",
+    eaddress: "New York",
+    salary: 50000,
+    details: function () {
+      return "Employee Name: " + this.ename + "-->Salary: " + this.salary;
+    },
+  };
+
+  var deepCopy = lodash.cloneDeep(employee);
+  console.log("Original Employee Object");
+  console.log(employee);
+  console.log("Deep Copied Employee Object");
+  console.log(deepCopy);
+</script>

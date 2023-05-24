@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo:App</title>
+    <style>
+      .add-container {
+        display: flex;
+        gap: 12px;
+        padding: 12px;
+      }
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+      .dropdown:hover .dropbtn {
+        background-color: #3e8e41;
+      }
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="add-container">
+      <input id="lable" type="text" placeholder="lable" />
+      <input id="placeholder" type="text" placeholder="placeholder" />
+
+      <button>
+        Type
+        <select class="dropdown">
+          <option value="email"></option>
+          <option value="email">Email</option>
+          <option value="date">Date</option>
+          <option value="TextBox">TextBox</option>
+          <option value="password">password</option>
+        </select>
+      </button>
+
+      <button onclick="Add()">Add</button>
+    </div>
+    <section>
+      <h1>Add</h1>
+      <ul id="list"></ul>
+    </section>
+  </body>
+</html>
+<script>
+  //   function myFunction() {
+  //     document.getElementById("myDropdown").classList.toggle("show");
+  //   }
+  const ListContainer = document.getElementById("list");
+  const newLable = document.getElementById("lable");
+  const newPlaceholder = document.getElementById("placeholder");
+
+  function Add() {
+    const newLableText = newLable.value;
+    const newPlaceholderText = newPlaceholder.value;
+
+    console.log(newLableText);
+    console.log(newPlaceholderText);
+
+    const element1 = document.createElement("li");
+    const element2 = document.createElement("li");
+    element1.textContent = newLableText;
+    element2.textContent = newplaceholderText;
+    ListContainer.prepend(element1);
+    ListContainer.prepend(element2);
+    newTitle.value = "";
+    newPlaceholder.value = "";
+  }
+
+  //console.log(todoListContainer, newTodoTitleElem);
+</script>
